@@ -18,11 +18,34 @@ function start() {
     ["_", "l", "a", "r", "c"].includes(arg)
   );
   const must = args._.length === 2;
-  console.log(args);
+  
   if (argType === true && valid === true && must === true) {
-    console.log("helyes");
+    if (args.l) {
+      listTodo();
+    } else if (args.a) {
+      addTodo();
+    } else if (args.r) {
+      deleteTodo();
+    } else if (args.c) {
+      completeTodo();
+    } else {
+      render();
+    }
   } else {
     console.log("Nem támogatott agrumentum!");
     render();
   }
+}
+
+function listTodo(params) {
+  console.log("listázás");
+}
+function deleteTodo(params) {
+  console.log("törlés");
+}
+function addTodo(params) {
+  console.log("hozzáadás");
+}
+function completeTodo(params) {
+  console.log("kész");
 }
