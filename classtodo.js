@@ -5,9 +5,6 @@ export class Todo {
     this.content = content;
     this.status = status ? status : false;
   }
-  complete() {
-    this.status = true;
-  }
   printTodo(index) {
     console.log(`${index} - [${this.status ? "x" : " "}] ${this.content}`);
   }

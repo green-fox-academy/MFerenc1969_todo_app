@@ -2,6 +2,8 @@ import minimist from "minimist";
 import { render } from "./render.js";
 import {addTodo} from "./addtodo.js";
 import {listTodo} from "./listtodo.js";
+import {completeTodo} from "./completetodo.js";
+import {deleteTodo} from "./deletetodo.js"
 
 start();
 
@@ -19,9 +21,9 @@ function start() {
     } else if (args.a) {
       addTodo(args.a);
     } else if (args.r) {
-      deleteTodo();
+      deleteTodo(args.r);
     } else if (args.c) {
-      completeTodo();
+      completeTodo(args.c);
     } else {
       render();
     }
@@ -31,10 +33,5 @@ function start() {
   }
 }
 
-function deleteTodo(params) {
-  console.log("törlés");
-}
 
-function completeTodo(params) {
-  console.log("kész");
-}
+
