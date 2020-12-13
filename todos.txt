@@ -1,1 +1,1 @@
-[{"content":"Megetetni a papagájt","status":false}]
+[{"content":"Megetetni a papagájt vagy nem","status":false}]
