@@ -1,6 +1,7 @@
 import minimist from "minimist";
 import { render } from "./render.js";
 import {addTodo} from "./addtodo.js";
+import {listTodo} from "./listtodo.js";
 
 start();
 
@@ -30,9 +31,6 @@ function start() {
   }
 }
 
-function listTodo(params) {
-  console.log("listázás");
-}
 function deleteTodo(params) {
   console.log("törlés");
 }

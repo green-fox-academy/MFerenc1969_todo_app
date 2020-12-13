@@ -1,3 +1,5 @@
+import { load } from "./load.js";
+
 export class Todo {
   constructor(content) {
     this.content = content;
@@ -8,4 +10,4 @@ export class Todo {
   }
 }
 
-export const todos = [];
+export const todos = load ();
