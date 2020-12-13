@@ -1,4 +1,16 @@
 import minimist from "minimist";
+import fs from "fs";
+
+class Todo {
+    constructor(content) {
+      this.content = content;
+      this.status = false;
+    }
+    complete() {
+      this.status = true;
+    }
+  }
+const todos = [];
 
 start();
 
@@ -23,7 +35,7 @@ function start() {
     if (args.l) {
       listTodo();
     } else if (args.a) {
-      addTodo();
+      addTodo(args.a);
     } else if (args.r) {
       deleteTodo();
     } else if (args.c) {
@@ -43,18 +55,22 @@ function listTodo(params) {
 function deleteTodo(params) {
   console.log("törlés");
 }
-function addTodo(params) {
-  console.log("hozzáadás");
+function addTodo(content) {
+    if (typeof content !== "string") {
+     console.log ("Nem lehetséges új feladat hozzáadása: nincs megadva a feladat!");
+     return;  
+    } 
+  let todo = new Todo(content);
+  todos.push (todo);
+  save ();
 }
 function completeTodo(params) {
   console.log("kész");
 }
-class Todo {
-  constructor(content) {
-    this.content = content;
-    this.status = false;
-  }
-  complete() {
-    this.status = true;
-  }
+function save() {
+   try {
+       fs.writeFileSync ("todos.txt", JSON.stringify (todos));
+   } catch (error) {
+       console.log ( "Nem sikerült menteni: " + error);
+   }
 }
