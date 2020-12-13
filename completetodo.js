@@ -16,6 +16,6 @@ export function completeTodo(index) {
     );
   } else {
     todos[index - 1].status = true;
-    save ();
+    save();
   }
 }
