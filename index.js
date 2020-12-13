@@ -18,7 +18,7 @@ function start() {
     ["_", "l", "a", "r", "c"].includes(arg)
   );
   const must = args._.length === 2;
-  
+
   if (argType === true && valid === true && must === true) {
     if (args.l) {
       listTodo();
@@ -48,4 +48,13 @@ function addTodo(params) {
 }
 function completeTodo(params) {
   console.log("kész");
+}
+class Todo {
+  constructor(content) {
+    this.content = content;
+    this.status = false;
+  }
+  complete() {
+    this.status = true;
+  }
 }
